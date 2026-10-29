@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawCare — Dog Care & Wellness</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+    }
+
+    /* High-visibility focus ring for accessibility */
+    *:focus-visible {
+      outline: 3px solid #0F766E !important;
+      outline-offset: 2px !important;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-[#F8FAFC] text-[#0F172A] pb-16 md:pb-0">
+
+  <!-- TOP NAVIGATION HEADER -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- Brand Identity -->
+      <button
+        type="button"
+        onclick="navigateTo('home')"
+        class="flex items-center gap-2.5 text-left group focus:outline-none"
+        aria-label="PawCare Dog Care and Wellness Home"
+      >
+        <div class="w-10 h-10 rounded-xl bg-teal-700 text-white flex items-center justify-center shadow-sm group-hover:bg-teal-800 transition">
+          <i class="fa-solid fa-paw text-lg" aria-hidden="true"></i>
+        </div>
+        <div>
+          <span class="block font-bold text-lg tracking-tight text-slate-900 leading-none">PawCare</span>
+          <span class="block text-xs text-slate-600 font-medium mt-0.5">Dog Care &amp; Wellness</span>
+        </div>
+      </button>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Main Navigation" class="hidden md:flex items-center gap-2">
+        <button
+          type="button"
+          onclick="navigateTo('home')"
+          id="desktop-nav-home"
+          class="px-4 py-2 rounded-lg text-sm font-semibold transition"
+        >
+          Home
+        </button>
+        <button
+          type="button"
+          onclick="navigateTo('services')"
+          id="desktop-nav-services"
+          class="px-4 py-2 rounded-lg text-sm font-semibold transition"
+        >
+          Services
+        </button>
+        <button
+          type="button"
+          onclick="navigateTo('booking')"
+          id="desktop-nav-booking"
+          class="ml-2 px-4 py-2.5 rounded-lg text-sm font-semibold bg-teal-700 hover:bg-teal-800 text-white transition shadow-sm"
+        >
+          Book Appointment
+        </button>
+      </nav>
+
+      <!-- Mobile Header Quick Action -->
+      <div class="md:hidden">
+        <button
+          type="button"
+          onclick="navigateTo('booking')"
+          class="px-3.5 py-2 rounded-lg text-xs font-semibold bg-teal-700 hover:bg-teal-800 text-white transition"
+        >
+          Book Now
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
+
+    <!-- =============================================================== -->
+    <!-- VIEW 1: HOMEPAGE                                                -->
+    <!-- =============================================================== -->
+    <section id="view-home" class="fade-in space-y-12" aria-labelledby="hero-heading">
+
+      <!-- Minimalist Hero Section -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm">
+        <div class="max-w-2xl space-y-5">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-teal-50 text-teal-800 border border-teal-200">
+            <i class="fa-solid fa-dog" aria-hidden="true"></i> Dedicated Canine Care Center
+          </span>
+          <h1 id="hero-heading" class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight leading-tight">
+            Thoughtful, professional care for your dog.
+          </h1>
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+            Review our specialized canine services, check preparation requirements, and start your appointment request online—without waiting on hold.
+          </p>
+          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+            <button
+              type="button"
+              onclick="navigateTo('services')"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm sm:text-base transition shadow-sm"
+            >
+              <span>Explore Services</span>
+              <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              onclick="navigateTo('booking')"
+              class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-sm sm:text-base border border-slate-300 transition"
+            >
+              <span>Book an Appointment</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Core Service Categories -->
+      <div class="space-y-4">
+        <div>
+          <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Our Care Categories</h2>
+          <p class="text-sm text-slate-600 mt-1">Select a service area to browse available packages and pricing.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Category 1: Grooming -->
+          <button
+            type="button"
+            onclick="openCatalogByCategory('Grooming')"
+            class="bg-white rounded-2xl border border-slate-200 hover:border-teal-700 p-6 text-left transition shadow-sm flex flex-col justify-between group"
+          >
+            <div class="space-y-3">
+              <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-scissors" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Grooming</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Breed-standard haircuts, gentle hypoallergenic baths, deshedding, nail trimming, and ear hygiene.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-teal-800">
+              <span>View Grooming Services</span>
+              <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition" aria-hidden="true"></i>
+            </div>
+          </button>
+
+          <!-- Category 2: Veterinary Check-ups -->
+          <button
+            type="button"
+            onclick="openCatalogByCategory('Veterinary Check-ups')"
+            class="bg-white rounded-2xl border border-slate-200 hover:border-teal-700 p-6 text-left transition shadow-sm flex flex-col justify-between group"
+          >
+            <div class="space-y-3">
+              <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-800 border border-blue-200 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Veterinary Check-ups</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Preventive physical examinations, annual vaccination boosters, parasite control, and senior dog evaluations.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-teal-800">
+              <span>View Veterinary Services</span>
+              <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition" aria-hidden="true"></i>
+            </div>
+          </button>
+
+          <!-- Category 3: Daycare & Wellness -->
+          <button
+            type="button"
+            onclick="openCatalogByCategory('Daycare & Wellness')"
+            class="bg-white rounded-2xl border border-slate-200 hover:border-teal-700 p-6 text-left transition shadow-sm flex flex-col justify-between group"
+          >
+            <div class="space-y-3">
+              <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Daycare &amp; Wellness</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Supervised socialization grouped by dog size, structured enrichment play, and calming therapeutic massage.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-teal-800">
+              <span>View Daycare &amp; Wellness</span>
+              <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition" aria-hidden="true"></i>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Simple 3-Step Summary -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900">How Online Booking Works</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="space-y-1.5">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-teal-700 text-white text-xs font-bold">1</span>
+            <h3 class="font-semibold text-slate-900 text-sm sm:text-base">Browse Services</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Filter our catalogue by Grooming, Veterinary Check-ups, or Daycare &amp; Wellness to compare options.
+            </p>
+          </div>
+          <div class="space-y-1.5">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-teal-700 text-white text-xs font-bold">2</span>
+            <h3 class="font-semibold text-slate-900 text-sm sm:text-base">Review Details</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Check session duration, transparent pricing, what is included, and vaccination requirements.
+            </p>
+          </div>
+          <div class="space-y-1.5">
+            <span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-teal-700 text-white text-xs font-bold">3</span>
+            <h3 class="font-semibold text-slate-900 text-sm sm:text-base">Start Your Request</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Submit your dog's profile and contact details to initiate your appointment reservation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- VIEW 2: SERVICE CATALOGUE                                       -->
+    <!-- =============================================================== -->
+    <section id="view-services" class="fade-in hidden space-y-6" aria-labelledby="catalogue-heading">
+
+      <div class="space-y-2">
+        <h1 id="catalogue-heading" class="text-2xl sm:text-3xl font-bold text-slate-900">Service Catalogue</h1>
+        <p class="text-sm sm:text-base text-slate-600">
+          Filter by category to explore our specialized dog care packages.
+        </p>
+      </div>
+
+      <!-- Category Filter Bar -->
+      <div class="flex flex-wrap gap-2 pt-1" role="group" aria-label="Filter services by type">
+        <button
+          type="button"
+          onclick="setCategoryFilter('All')"
+          id="filter-btn-All"
+          class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition"
+        >
+          All Services
+        </button>
+        <button
+          type="button"
+          onclick="setCategoryFilter('Grooming')"
+          id="filter-btn-Grooming"
+          class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition"
+        >
+          Grooming
+        </button>
+        <button
+          type="button"
+          onclick="setCategoryFilter('Veterinary Check-ups')"
+          id="filter-btn-Veterinary Check-ups"
+          class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition"
+        >
+          Veterinary Check-ups
+        </button>
+        <button
+          type="button"
+          onclick="setCategoryFilter('Daycare & Wellness')"
+          id="filter-btn-Daycare & Wellness"
+          class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border transition"
+        >
+          Daycare &amp; Wellness
+        </button>
+      </div>
+
+      <!-- Services Grid -->
+      <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 gap-5" aria-live="polite">
+        <!-- Populated by JavaScript -->
+      </div>
+
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- VIEW 3: SERVICE-DETAIL SCREEN                                   -->
+    <!-- =============================================================== -->
+    <section id="view-detail" class="fade-in hidden space-y-6" aria-labelledby="detail-title">
+
+      <div>
+        <button
+          type="button"
+          onclick="navigateTo('services')"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-teal-800 transition"
+        >
+          <i class="fa-solid fa-arrow-left text-xs" aria-hidden="true"></i>
+          <span>Back to Catalogue</span>
+        </button>
+      </div>
+
+      <div id="serviceDetailContainer" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+        <!-- Populated by JavaScript -->
+      </div>
+
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- VIEW 4: INITIAL APPOINTMENT-BOOKING FLOW                        -->
+    <!-- =============================================================== -->
+    <section id="view-booking" class="fade-in hidden max-w-2xl mx-auto space-y-6" aria-labelledby="booking-heading">
+
+      <div class="space-y-1.5">
+        <h1 id="booking-heading" class="text-2xl sm:text-3xl font-bold text-slate-900">Book an Appointment</h1>
+        <p class="text-sm sm:text-base text-slate-600">
+          Select a service and provide your dog's information to start your booking request.
+        </p>
+      </div>
+
+      <!-- Initial Booking Form Container -->
+      <form id="bookingForm" onsubmit="submitInitialBooking(event)" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6" novalidate>
+
+        <!-- 1. Service Selection -->
+        <div class="space-y-3">
+          <label for="bookingServiceSelect" class="block text-sm font-bold text-slate-900">
+            1. Selected Care Service
+          </label>
+          <select
+            id="bookingServiceSelect"
+            onchange="updateSelectedServiceInForm(this.value)"
+            class="w-full px-3.5 py-3 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm font-medium focus:border-teal-700"
+          >
+            <!-- Populated by JS -->
+          </select>
+
+          <!-- Brief summary of selected service -->
+          <div id="bookingServiceSummary" class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs sm:text-sm">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <hr class="border-slate-200" />
+
+        <!-- 2. Dog Information -->
+        <div class="space-y-4">
+          <h2 class="text-sm font-bold text-slate-900">2. Dog Information</h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="dogName" class="block text-xs font-semibold text-slate-700 mb-1">
+                Dog's Name <span class="text-red-600">*</span>
+              </label>
+              <input
+                id="dogName"
+                type="text"
+                required
+                placeholder="e.g., Max"
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900"
+              />
+            </div>
+
+            <div>
+              <label for="dogBreed" class="block text-xs font-semibold text-slate-700 mb-1">
+                Breed <span class="text-red-600">*</span>
+              </label>
+              <input
+                id="dogBreed"
+                type="text"
+                required
+                placeholder="e.g., Golden Retriever"
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900"
+              />
+            </div>
+          </div>
+
+          <!-- Dog Size -->
+          <div>
+            <span class="block text-xs font-semibold text-slate-700 mb-2">
+              Dog Size <span class="text-red-600">*</span>
+            </span>
+            <div class="grid grid-cols-3 gap-3">
+              <label class="cursor-pointer">
+                <input type="radio" name="dogSize" value="Small (Under 10 kg)" class="peer sr-only" checked />
+                <div class="p-3 rounded-xl border border-slate-300 peer-checked:border-teal-700 peer-checked:bg-teal-50/60 text-center transition">
+                  <p class="font-semibold text-xs text-slate-900">Small</p>
+                  <p class="text-[11px] text-slate-500">Under 10 kg</p>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="dogSize" value="Medium (10–25 kg)" class="peer sr-only" />
+                <div class="p-3 rounded-xl border border-slate-300 peer-checked:border-teal-700 peer-checked:bg-teal-50/60 text-center transition">
+                  <p class="font-semibold text-xs text-slate-900">Medium</p>
+                  <p class="text-[11px] text-slate-500">10–25 kg</p>
+                </div>
+              </label>
+              <label class="cursor-pointer">
+                <input type="radio" name="dogSize" value="Large (Over 25 kg)" class="peer sr-only" />
+                <div class="p-3 rounded-xl border border-slate-300 peer-checked:border-teal-700 peer-checked:bg-teal-50/60 text-center transition">
+                  <p class="font-semibold text-xs text-slate-900">Large</p>
+                  <p class="text-[11px] text-slate-500">Over 25 kg</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Care Notes -->
+          <div>
+            <label for="careNotes" class="block text-xs font-semibold text-slate-700 mb-1">
+              Care Notes, Allergies, or Temperament (Optional)
+            </label>
+            <textarea
+              id="careNotes"
+              rows="2"
+              placeholder="Let us know about any sensitivities, allergies, or special handling needs."
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900"
+            ></textarea>
+          </div>
+        </div>
+
+        <hr class="border-slate-200" />
+
+        <!-- 3. Owner Contact Information -->
+        <div class="space-y-4">
+          <h2 class="text-sm font-bold text-slate-900">3. Owner Contact Information</h2>
+
+          <div>
+            <label for="ownerName" class="block text-xs font-semibold text-slate-700 mb-1">
+              Full Name <span class="text-red-600">*</span>
+            </label>
+            <input
+              id="ownerName"
+              type="text"
+              required
+              placeholder="Enter your full name"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900"
+            />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="ownerEmail" class="block text-xs font-semibold text-slate-700 mb-1">
+                Email Address <span class="text-red-600">*</span>
+              </label>
+              <input
+                id="ownerEmail"
+                type="email"
+                required
+                placeholder="name@example.com"
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900"
+              />
+            </div>
+
+            <div>
+              <label for="ownerPhone" class="block text-xs font-semibold text-slate-700 mb-1">
+                Phone Number <span class="text-red-600">*</span>
+              </label>
+              <input
+                id="ownerPhone"
+                type="tel"
+                required
+                placeholder="(555) 000-0000"
+                class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Inline Validation Message -->
+        <div id="bookingErrorBox" class="hidden p-3.5 rounded-xl bg-red-50 border border-red-300 text-red-900 text-xs sm:text-sm font-medium" role="alert">
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="w-full py-3.5 px-6 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm sm:text-base transition shadow-sm"
+        >
+          Start Booking Request
+        </button>
+      </form>
+
+      <!-- Initial Booking Request Summary State (Displayed after submission) -->
+      <div id="bookingSummaryState" class="hidden bg-white rounded-2xl border border-teal-600 p-6 sm:p-8 shadow-sm space-y-6" aria-live="polite">
+        <!-- Populated by JavaScript -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MINIMALIST COMMERCIAL FOOTER -->
+  <footer class="bg-white border-t border-slate-200 mt-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs sm:text-sm text-slate-600">
+      <div>
+        <p class="font-bold text-slate-900">PawCare Dog Care &amp; Wellness</p>
+        <p class="mt-0.5">742 Evergreen Terrace, Suite 100 • Open Mon–Sat, 8:00 AM – 6:00 PM</p>
+      </div>
+      <div class="text-slate-500">
+        &copy; 2026 PawCare Center. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ACCESSIBLE MOBILE BOTTOM NAVIGATION BAR -->
+  <nav
+    aria-label="Mobile Navigation"
+    class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-40 px-2 py-1.5"
+  >
+    <div class="grid grid-cols-3 gap-1 max-w-md mx-auto">
+      <button
+        type="button"
+        onclick="navigateTo('home')"
+        id="mobile-nav-home"
+        class="flex flex-col items-center justify-center py-2 rounded-xl text-xs font-semibold transition"
+      >
+        <i class="fa-solid fa-house text-sm mb-0.5" aria-hidden="true"></i>
+        <span>Home</span>
+      </button>
+      <button
+        type="button"
+        onclick="navigateTo('services')"
+        id="mobile-nav-services"
+        class="flex flex-col items-center justify-center py-2 rounded-xl text-xs font-semibold transition"
+      >
+        <i class="fa-solid fa-list text-sm mb-0.5" aria-hidden="true"></i>
+        <span>Services</span>
+      </button>
+      <button
+        type="button"
+        onclick="navigateTo('booking')"
+        id="mobile-nav-booking"
+        class="flex flex-col items-center justify-center py-2 rounded-xl text-xs font-semibold transition"
+      >
+        <i class="fa-regular fa-calendar-check text-sm mb-0.5" aria-hidden="true"></i>
+        <span>Book</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- APPLICATION LOGIC -->
+  <script>
+    // Catalogue of Dog Care Services across the 3 required categories
+    const SERVICES = [
+      // 1. Grooming
+      {
+        id: 'full-grooming',
+        category: 'Grooming',
+        badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+        title: 'Full Grooming & Breed Styling',
+        price: 55,
+        duration: '90 mins',
+        shortDesc: 'Warm hydro-bath, blow dry, full breed-standard haircut, nail trim, and ear cleaning.',
+        fullDesc: 'Our signature full grooming session is tailored to your dog’s coat type and breed standard. Includes a gentle warm bath with hypoallergenic shampoo, low-noise velocity drying, full body styling, sanitary trim, nail clipping, and ear canal hygiene.',
+        included: [
+          'Hypoallergenic warm bath and conditioning',
+          'Full breed-specific haircut and styling',
+          'Nail trimming and paw pad neatening',
+          'Gentle ear cleaning and coat brushing'
+        ],
+        requirements: [
+          'Proof of up-to-date Rabies vaccination is required.',
+          'Dogs must arrive on a secure leash or harness.',
+          'Please inform us of any skin sensitivities prior to the session.'
+        ]
+      },
+      {
+        id: 'bath-brush',
+        category: 'Grooming',
+        badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+        title: 'Soothing Bath & Deshedding Care',
+        price: 38,
+        duration: '60 mins',
+        shortDesc: 'Deep-cleansing oatmeal bath, undercoat deshedding treatment, nail trim, and ear wipe.',
+        fullDesc: 'Ideal for dogs between haircuts or double-coated breeds needing undercoat maintenance. Uses soothing oatmeal and aloe cleanser to hydrate the skin while removing loose fur and tangles.',
+        included: [
+          'Oatmeal and aloe soothing bath',
+          'Thorough undercoat brushing and deshedding',
+          'Nail clipping and paw balm application',
+          'Ear cleaning'
+        ],
+        requirements: [
+          'Current Rabies vaccination record.',
+          'Not recommended for dogs with open skin wounds without veterinary approval.'
+        ]
+      },
+      {
+        id: 'hygiene-express',
+        category: 'Grooming',
+        badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
+        title: 'Essential Nail, Ear & Paw Care',
+        price: 22,
+        duration: '30 mins',
+        shortDesc: 'Quick maintenance session for nail trimming, smoothing, ear cleaning, and paw pad trim.',
+        fullDesc: 'A focused, low-stress maintenance session to keep your dog’s nails at a healthy length and ears clean between full grooming visits.',
+        included: [
+          'Nail clipping and gentle filing',
+          'Interdigital paw hair trim',
+          'Ear canal wipe with otic solution'
+        ],
+        requirements: [
+          'Up-to-date Rabies vaccination.',
+          'Let our team know if your dog is sensitive about paw handling.'
+        ]
+      },
+
+      // 2. Veterinary Check-ups
+      {
+        id: 'vet-wellness-exam',
+        category: 'Veterinary Check-ups',
+        badgeClass: 'bg-blue-50 text-blue-800 border-blue-200',
+        title: 'Comprehensive Canine Wellness Exam',
+        price: 60,
+        duration: '45 mins',
+        shortDesc: 'Complete head-to-tail physical check-up, heart and lung auscultation, weight, and dental review.',
+        fullDesc: 'A thorough preventive veterinary consultation designed to monitor your dog’s overall health. The veterinarian evaluates cardiovascular function, eyes, ears, teeth, joints, and body condition, providing tailored nutrition and preventive care guidance.',
+        included: [
+          'Full physical and cardiopulmonary examination',
+          'Weight and body condition assessment',
+          'Oral, dental, and otoscopic check',
+          'Updated clinical health summary'
+        ],
+        requirements: [
+          'Bring previous vaccination records or medical history if visiting for the first time.',
+          'List any current medications, supplements, or diet brands.'
+        ]
+      },
+      {
+        id: 'vaccine-parasite-check',
+        category: 'Veterinary Check-ups',
+        badgeClass: 'bg-blue-50 text-blue-800 border-blue-200',
+        title: 'Vaccination & Preventive Deworming Visit',
+        price: 45,
+        duration: '30 mins',
+        shortDesc: 'Pre-vaccine vitals check, core canine booster administration, and weight-based deworming.',
+        fullDesc: 'Keep your dog protected year-round. Every immunization visit begins with a temperature and vitals check to confirm your dog is healthy prior to administering annual boosters and parasite prevention.',
+        included: [
+          'Pre-vaccination temperature and vitals check',
+          'Core vaccine booster administration',
+          'Internal/external deworming dose',
+          'Official vaccination card update'
+        ],
+        requirements: [
+          'Dog must be free of fever, vomiting, or diarrhea for at least 72 hours prior.',
+          'Bring your dog’s current vaccination booklet.'
+        ]
+      },
+      {
+        id: 'senior-dog-screen',
+        category: 'Veterinary Check-ups',
+        badgeClass: 'bg-blue-50 text-blue-800 border-blue-200',
+        title: 'Senior Dog Mobility & Comfort Check-up',
+        price: 70,
+        duration: '60 mins',
+        shortDesc: 'Specialized evaluation for dogs aged 7+ focusing on joint mobility, vision, and cardiac health.',
+        fullDesc: 'Dedicated care for aging dogs to support comfort and longevity. Includes an orthopedic joint and range-of-motion exam, blood pressure check, ocular lens evaluation, and a customized mobility support plan.',
+        included: [
+          'Orthopedic joint and mobility evaluation',
+          'Non-invasive blood pressure measurement',
+          'Vision and cardiac screening',
+          'Senior nutrition and joint care plan'
+        ],
+        requirements: [
+          'Designed for dogs 7 years of age and older.',
+          'Please bring a list of any current joint supplements or medications.'
+        ]
+      },
+
+      // 3. Daycare & Wellness
+      {
+        id: 'daycare-full-day',
+        category: 'Daycare & Wellness',
+        badgeClass: 'bg-amber-50 text-amber-800 border-amber-200',
+        title: 'Full-Day Supervised Canine Daycare',
+        price: 35,
+        duration: '8 hours',
+        shortDesc: 'Structured socialization grouped by dog size, outdoor play, mental enrichment, and midday rest.',
+        fullDesc: 'A safe, engaging environment where dogs enjoy supervised group play matched by size and temperament. Our daily schedule balances active play sessions, scent puzzles, and quiet midday rest in climate-controlled suites.',
+        included: [
+          'Size-matched supervised play groups',
+          'Cognitive and scent enrichment activities',
+          'Midday rest break in individual suite',
+          'Fresh water and hydration monitoring'
+        ],
+        requirements: [
+          'Up-to-date Rabies, DHPP, and Bordetella (Kennel Cough) vaccines required.',
+          'Dogs must be friendly with other dogs and wear a flat collar with ID tag.',
+          'Bring your dog’s midday meal in a labeled container if applicable.'
+        ]
+      },
+      {
+        id: 'half-day-enrichment',
+        category: 'Daycare & Wellness',
+        badgeClass: 'bg-amber-50 text-amber-800 border-amber-200',
+        title: 'Half-Day Play & Agility Enrichment',
+        price: 25,
+        duration: '4 hours',
+        shortDesc: 'Focused half-day session combining low-impact obstacle play, interactive games, and socialization.',
+        fullDesc: 'Ideal for energetic dogs needing structured physical activity and mental stimulation in a shorter four-hour visit.',
+        included: [
+          'Guided low-impact agility and tunnel play',
+          'Interactive puzzle and snuffle mat session',
+          'Supervised small-group socialization'
+        ],
+        requirements: [
+          'Current Rabies and Bordetella vaccinations.',
+          'Suitable for dogs over 6 months old with healthy joints.'
+        ]
+      },
+      {
+        id: 'canine-massage-wellness',
+        category: 'Daycare & Wellness',
+        badgeClass: 'bg-amber-50 text-amber-800 border-amber-200',
+        title: 'Calming Canine Massage & Stretching Session',
+        price: 48,
+        duration: '50 mins',
+        shortDesc: 'One-on-one therapeutic massage and gentle passive stretching to ease muscle tension and anxiety.',
+        fullDesc: 'Conducted in a quiet, relaxing room on orthopedic mats. Gentle myofascial massage techniques help reduce stiffness, support circulation, and calm nervous or active dogs.',
+        included: [
+          'Full-body gentle canine massage',
+          'Passive joint range-of-motion stretching',
+          'Quiet acoustic relaxation environment'
+        ],
+        requirements: [
+          'Avoid heavy meals at least 2 hours before the session.',
+          'Inform us of any previous orthopedic surgeries or tender areas.'
+        ]
+      }
+    ];
+
+    let activeCategory = 'All';
+    let selectedServiceId = SERVICES[0].id;
+
+    // Switch between the 4 Sprint 1 Views
+    function navigateTo(view) {
+      const views = ['home', 'services', 'detail', 'booking'];
+      views.forEach(v => {
+        const section = document.getElementById(`view-${v}`);
+        if (section) {
+          section.classList.toggle('hidden', v !== view);
+        }
+      });
+
+      // Highlight active navigation item
+      const navTargets = ['home', 'services', 'booking'];
+      const activeNav = view === 'detail' ? 'services' : view;
+
+      navTargets.forEach(item => {
+        const dBtn = document.getElementById(`desktop-nav-${item}`);
+        const mBtn = document.getElementById(`mobile-nav-${item}`);
+
+        if (dBtn && item !== 'booking') {
+          dBtn.className = item === activeNav
+            ? 'px-4 py-2 rounded-lg text-sm font-semibold bg-slate-100 text-teal-800 transition'
+            : 'px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition';
+        }
+
+        if (mBtn) {
+          mBtn.className = item === activeNav
+            ? 'flex flex-col items-center justify-center py-2 rounded-xl text-xs font-bold text-teal-800 bg-teal-50 transition'
+            : 'flex flex-col items-center justify-center py-2 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-50 transition';
+        }
+      });
+
+      if (view === 'services') {
+        renderCatalogue();
+      } else if (view === 'detail') {
+        renderServiceDetail();
+      } else if (view === 'booking') {
+        populateBookingSelect();
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Open catalogue filtered from Homepage category cards
+    function openCatalogByCategory(category) {
+      activeCategory = category;
+      navigateTo('services');
+    }
+
+    function setCategoryFilter(category) {
+      activeCategory = category;
+      renderCatalogue();
+    }
+
+    // Render Service Catalogue (View 2)
+    function renderCatalogue() {
+      const categories = ['All', 'Grooming', 'Veterinary Check-ups', 'Daycare & Wellness'];
+      categories.forEach(cat => {
+        const btn = document.getElementById(`filter-btn-${cat}`);
+        if (!btn) return;
+        if (cat === activeCategory) {
+          btn.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-teal-700 bg-teal-700 text-white shadow-sm transition';
+          btn.setAttribute('aria-pressed', 'true');
+        } else {
+          btn.className = 'px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 transition';
+          btn.setAttribute('aria-pressed', 'false');
+        }
+      });
+
+      const filtered = activeCategory === 'All'
+        ? SERVICES
+        : SERVICES.filter(s => s.category === activeCategory);
+
+      const grid = document.getElementById('servicesGrid');
+      if (!grid) return;
+
+      grid.innerHTML = filtered.map(service => `
+        <article class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-2">
+              <span class="px-2.5 py-1 rounded-full text-xs font-semibold border ${service.badgeClass}">
+                ${service.category}
+              </span>
+              <span class="text-xs font-medium text-slate-500">
+                <i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>${service.duration}
+              </span>
+            </div>
+
+            <h2 class="text-lg font-bold text-slate-900">${service.title}</h2>
+            <p class="text-sm text-slate-600 leading-relaxed">${service.shortDesc}</p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-4">
+            <div>
+              <span class="text-xs text-slate-500 block">Price</span>
+              <span class="text-lg font-bold text-slate-900">$${service.price}</span>
+            </div>
+            <button
+              type="button"
+              onclick="viewServiceDetails('${service.id}')"
+              class="px-4 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-semibold transition"
+            >
+              View Details
+            </button>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Open Service-Detail Screen (View 3)
+    function viewServiceDetails(serviceId) {
+      selectedServiceId = serviceId;
+      navigateTo('detail');
+    }
+
+    function renderServiceDetail() {
+      const service = SERVICES.find(s => s.id === selectedServiceId) || SERVICES[0];
+      const container = document.getElementById('serviceDetailContainer');
+      if (!container) return;
+
+      container.innerHTML = `
+        <div class="space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-6">
+            <div class="space-y-2">
+              <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold border ${service.badgeClass}">
+                ${service.category}
+              </span>
+              <h1 id="detail-title" class="text-2xl sm:text-3xl font-bold text-slate-900">${service.title}</h1>
+            </div>
+            <div class="sm:text-right bg-slate-50 px-4 py-3 rounded-xl border border-slate-200 self-start">
+              <p class="text-2xl font-bold text-slate-900">$${service.price}</p>
+              <p class="text-xs font-medium text-slate-600">
+                <i class="fa-regular fa-clock mr-1" aria-hidden="true"></i>Duration: ${service.duration}
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <h2 class="text-base font-bold text-slate-900">Service Overview</h2>
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">${service.fullDesc}</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
+            <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+              <h3 class="text-sm font-bold text-slate-900">What's Included</h3>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+                ${service.included.map(item => `
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-check text-teal-700 mt-1" aria-hidden="true"></i>
+                    <span>${item}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
+              <h3 class="text-sm font-bold text-slate-900">Preparation &amp; Requirements</h3>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-700">
+                ${service.requirements.map(req => `
+                  <li class="flex items-start gap-2">
+                    <i class="fa-solid fa-circle-info text-slate-500 mt-1" aria-hidden="true"></i>
+                    <span>${req}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs sm:text-sm text-slate-600">
+              Ready to schedule this service for your dog?
+            </p>
+            <button
+              type="button"
+              onclick="startBookingFromDetail('${service.id}')"
+              class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm sm:text-base transition shadow-sm"
+            >
+              Book This Service
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // Proceed from Detail Screen to Initial Booking Flow (View 4)
+    function startBookingFromDetail(serviceId) {
+      selectedServiceId = serviceId;
+      // Ensure form is visible and summary is hidden when starting a fresh booking
+      const form = document.getElementById('bookingForm');
+      const summary = document.getElementById('bookingSummaryState');
+      if (form) form.classList.remove('hidden');
+      if (summary) summary.classList.add('hidden');
+      navigateTo('booking');
+    }
+
+    function populateBookingSelect() {
+      const select = document.getElementById('bookingServiceSelect');
+      if (!select) return;
+
+      select.innerHTML = SERVICES.map(s => `
+        <option value="${s.id}" ${s.id === selectedServiceId ? 'selected' : ''}>
+          ${s.title} (${s.category}) — $${s.price} • ${s.duration}
+        </option>
+      `).join('');
+
+      updateSelectedServiceInForm(selectedServiceId);
+    }
+
+    function updateSelectedServiceInForm(serviceId) {
+      selectedServiceId = serviceId;
+      const service = SERVICES.find(s => s.id === serviceId) || SERVICES[0];
+      const summaryEl = document.getElementById('bookingServiceSummary');
+      if (!summaryEl) return;
+
+      summaryEl.innerHTML = `
+        <div>
+          <span class="font-semibold text-slate-900">${service.title}</span>
+          <span class="text-slate-500 block text-xs">Category: ${service.category} • Duration: ${service.duration}</span>
+        </div>
+        <div class="text-right">
+          <span class="font-bold text-slate-900 text-base">$${service.price}</span>
+          <button
+            type="button"
+            onclick="viewServiceDetails('${service.id}')"
+            class="block text-xs text-teal-700 hover:underline font-semibold"
+          >
+            View service details
+          </button>
+        </div>
+      `;
+    }
+
+    function submitInitialBooking(event) {
+      event.preventDefault();
+
+      const dogName = document.getElementById('dogName').value.trim();
+      const dogBreed = document.getElementById('dogBreed').value.trim();
+      const careNotes = document.getElementById('careNotes').value.trim();
+      const ownerName = document.getElementById('ownerName').value.trim();
+      const ownerEmail = document.getElementById('ownerEmail').value.trim();
+      const ownerPhone = document.getElementById('ownerPhone').value.trim();
+      const sizeInput = document.querySelector('input[name="dogSize"]:checked');
+      const dogSize = sizeInput ? sizeInput.value : 'Small (Under 10 kg)';
+
+      const errorBox = document.getElementById('bookingErrorBox');
+
+      if (!dogName || !dogBreed || !ownerName || !ownerEmail || !ownerPhone) {
+        errorBox.textContent = 'Please complete all required fields (*) to start your booking request.';
+        errorBox.classList.remove('hidden');
+        return;
+      }
+
+      errorBox.classList.add('hidden');
+
+      const service = SERVICES.find(s => s.id === selectedServiceId) || SERVICES[0];
+      const summaryState = document.getElementById('bookingSummaryState');
+      const form = document.getElementById('bookingForm');
+
+      form.classList.add('hidden');
+      summaryState.classList.remove('hidden');
+
+      summaryState.innerHTML = `
+        <div class="flex items-start gap-3 border-b border-slate-200 pb-4">
+          <div class="w-10 h-10 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fa-solid fa-check" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-slate-900">Booking Request Initiated</h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-0.5">
+              We have recorded your service selection and your dog's profile details.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm bg-slate-50 p-4 rounded-xl border border-slate-200">
+          <div>
+            <span class="text-slate-500 block">Selected Service</span>
+            <span class="font-bold text-slate-900">${service.title}</span>
+            <span class="text-slate-600 block text-xs">${service.category} • $${service.price} (${service.duration})</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Dog Profile</span>
+            <span class="font-bold text-slate-900">${dogName} (${dogBreed})</span>
+            <span class="text-slate-600 block text-xs">Size: ${dogSize}</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Owner Contact</span>
+            <span class="font-bold text-slate-900">${ownerName}</span>
+            <span class="text-slate-600 block text-xs">${ownerEmail} • ${ownerPhone}</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Care Notes</span>
+            <span class="text-slate-800">${careNotes || 'No special notes provided'}</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <button
+            type="button"
+            onclick="editBookingDetails()"
+            class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-50 text-xs sm:text-sm font-semibold transition"
+          >
+            Edit Request Details
+          </button>
+          <button
+            type="button"
+            onclick="navigateTo('services')"
+            class="px-5 py-2.5 rounded-xl bg-teal-700 hover:bg-teal-800 text-white text-xs sm:text-sm font-semibold transition"
+          >
+            Browse More Services
+          </button>
+        </div>
+      `;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function editBookingDetails() {
+      document.getElementById('bookingSummaryState').classList.add('hidden');
+      document.getElementById('bookingForm').classList.remove('hidden');
+    }
+
+    window.onload = function () {
+      navigateTo('home');
+    };
+  </script>
+</body>
+</html>
